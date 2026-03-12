@@ -1,8 +1,6 @@
 import type { Metadata } from 'next'
 import StyledComponentsRegistry from '@/lib/StyledComponentsRegistry'
-import { ThemeProvider } from 'styled-components'
-import { theme } from '@/shared/styles/theme'
-import { GlobalStyle } from '@/shared/styles/GlobalStyle'
+import Providers from '@/lib/Providers'
 import { Nunito } from 'next/font/google'
 
 const nunito = Nunito({
@@ -22,13 +20,10 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="pt-BR" className={nunito.className}>
-      <body>
+    <html lang="pt-BR">
+      <body className={nunito.variable}>
         <StyledComponentsRegistry>
-          <ThemeProvider theme={theme}>
-            <GlobalStyle />
-            {children}
-          </ThemeProvider>
+          <Providers>{children}</Providers>
         </StyledComponentsRegistry>
       </body>
     </html>
