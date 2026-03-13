@@ -19,6 +19,7 @@ export const theme = {
       warning: 'rgba(253, 244, 230, 1)',
       info: 'rgba(235, 242, 249, 1)',
     },
+
     text: {
       invert: 'rgba(255, 255, 255, 1)',
       heading: 'rgba(19, 19, 19, 1)',
@@ -33,6 +34,7 @@ export const theme = {
       success: 'rgba(41, 138, 70, 1)',
       info: 'rgba(77, 138, 203, 1)',
     },
+
     border: {
       focusOffset: 'rgba(207, 207, 207, 1)',
       subtle: 'rgba(45, 45, 45, 1)',
@@ -49,6 +51,7 @@ export const theme = {
       errorHover: 'rgba(155, 23, 23, 1)',
       errorPressed: 'rgba(111, 17, 17, 1)',
     },
+
     icon: {
       invert: 'rgba(203, 203, 203, 1)',
       default: 'rgba(19, 19, 19, 1)',
@@ -62,6 +65,7 @@ export const theme = {
       info: 'rgba(77, 138, 203, 1)',
       warning: 'rgba(185, 81, 19, 1)',
     },
+
     gradient: {
       primary:
         'linear-gradient(180deg, rgba(1, 131, 131, 1) 0%, rgba(1, 70, 135, 1) 100%)',
@@ -74,83 +78,27 @@ export const theme = {
 
   typography: {
     styles: {
-      'headline-xl': {
-        fontSize: '48px',
-        fontWeight: 700,
-        lineHeight: '120%',
-      },
-
-      'headline-lg': {
-        fontSize: '40px',
-        fontWeight: 700,
-        lineHeight: '120%',
-      },
-
-      'headline-base': {
-        fontSize: '32px',
-        fontWeight: 700,
-        lineHeight: '120%',
-      },
-
-      'headline-sm': {
-        fontSize: '24px',
-        fontWeight: 400,
-        lineHeight: '150%',
-      },
-
+      'headline-xl': { fontSize: '48px', fontWeight: 700, lineHeight: 1.2 },
+      'headline-lg': { fontSize: '40px', fontWeight: 700, lineHeight: 1.2 },
+      'headline-base': { fontSize: '32px', fontWeight: 700, lineHeight: 1.2 },
+      'headline-sm': { fontSize: '24px', fontWeight: 400, lineHeight: 1.5 },
       'headline-sm-high200': {
         fontSize: '24px',
         fontWeight: 700,
-        lineHeight: '150%',
+        lineHeight: 1.5,
       },
-
-      'text-xl': {
-        fontSize: '18px',
-        fontWeight: 400,
-        lineHeight: '150%',
-      },
-
-      'text-xl-high200': {
-        fontSize: '18px',
-        fontWeight: 700,
-        lineHeight: '150%',
-      },
-
-      'text-base': {
-        fontSize: '16px',
-        fontWeight: 400,
-        lineHeight: '150%',
-      },
-
+      'text-xl': { fontSize: '18px', fontWeight: 400, lineHeight: 1.5 },
+      'text-xl-high200': { fontSize: '18px', fontWeight: 700, lineHeight: 1.5 },
+      'text-base': { fontSize: '16px', fontWeight: 400, lineHeight: 1.5 },
       'text-base-high200': {
         fontSize: '16px',
         fontWeight: 700,
-        lineHeight: '150%',
+        lineHeight: 1.5,
       },
-
-      'text-sm': {
-        fontSize: '14px',
-        fontWeight: 400,
-        lineHeight: '150%',
-      },
-
-      'text-sm-high200': {
-        fontSize: '14px',
-        fontWeight: 600,
-        lineHeight: '150%',
-      },
-
-      'text-xs': {
-        fontSize: '12px',
-        fontWeight: 400,
-        lineHeight: '150%',
-      },
-
-      'text-xs-high200': {
-        fontSize: '12px',
-        fontWeight: 700,
-        lineHeight: '150%',
-      },
+      'text-sm': { fontSize: '14px', fontWeight: 400, lineHeight: 1.5 },
+      'text-sm-high200': { fontSize: '14px', fontWeight: 600, lineHeight: 1.5 },
+      'text-xs': { fontSize: '12px', fontWeight: 400, lineHeight: 1.5 },
+      'text-xs-high200': { fontSize: '12px', fontWeight: 700, lineHeight: 1.5 },
     },
   },
 
@@ -159,34 +107,76 @@ export const theme = {
     md: '16px',
   },
 
-  space: {},
-
   shadow: '0px 5px 10px rgba(0, 0, 0, 0.3)',
-}
 
-export const darkTheme = {
-  colors: {
-    gray10: 'rgba(19, 19, 19, 1)',
-    gray30: 'rgba(45, 45, 45, 1)',
-    gray60: 'rgba(207, 207, 207, 1)',
-    gray70: 'rgba(207, 207, 207, 1)',
-    gray80: 'rgba(255, 255, 255, 1)',
+  space: {
+    scale: {
+      xxxs: '4px',
+      xxs: '8px',
+      xs: '12px',
+      sm: '16px',
+      md: '24px',
+      lg: '32px',
+      xl: '40px',
+      xxl: '48px',
+      xxxl: '64px',
+    },
 
-    emerald10: 'rgba(223, 242, 237, 1)',
-    emerald20: 'rgba(178, 223, 208, 1)',
-    emerald40: 'rgba(1, 135, 98, 1)',
-    emerald70: 'rgba(0, 119, 86, 1)',
-    emerald80: 'rgba(1, 76, 55, 1)',
+    inset: {
+      xs: '8px',
+      sm: '16px',
+      md: '24px',
+      lg: '32px',
+    },
 
-    red60: 'rgba(188, 28, 28, 1)',
+    stack: {
+      xs: '8px',
+      sm: '16px',
+      md: '24px',
+      lg: '32px',
+    },
 
-    blue50: 'rgba(77, 138, 203, 1)',
+    inline: {
+      xs: '8px',
+      sm: '16px',
+      md: '24px',
+      lg: '32px',
+    },
   },
 
-  borderRadius: {
-    sm: '8px',
-    md: '16px',
+  breakpoints: {
+    mobileSm: '360px',
+    mobileMd: '375px',
+    mobileLg: '414px',
+    mobileXl: '480px',
+
+    tablet: '720px',
+
+    desktopSm: '1024px',
+    desktopMd: '1280px',
+    desktopLg: '1440px',
+    desktopXl: '1920px',
+
+    ultraWide: '2560px',
   },
 
-  shadow: '0px 5px 10px rgba(255, 255, 255, 0.05)',
+  layout: {
+    container: {
+      mobile: '375px',
+      desktop: '1440px',
+    },
+
+    minHeight: {
+      mobile: '640px',
+      desktop: '768px',
+    },
+  },
+
+  media: {
+    mobile: '(min-width: 360px)',
+    tablet: '(min-width: 720px)',
+    desktop: '(min-width: 1024px)',
+    desktopLg: '(min-width: 1440px)',
+    ultraWide: '(min-width: 2560px)',
+  },
 }
