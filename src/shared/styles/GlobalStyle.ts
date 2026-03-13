@@ -15,14 +15,9 @@ export const GlobalStyle = createGlobalStyle`
   body {
     background-color: ${({ theme }) => theme.color.background.default};
     transition: 200ms;
-
-    margin: 0 24px;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
     min-height: 100vh;
-
     max-width: 1100px;
+    margin: 0 auto;
   }
 
   main {

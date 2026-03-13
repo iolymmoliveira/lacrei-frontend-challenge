@@ -5,13 +5,16 @@ import { Nunito } from 'next/font/google'
 
 const nunito = Nunito({
   subsets: ['latin'],
-  weight: ['400', '700'],
+  weight: ['400', '700', '800'],
   variable: '--font-nunito',
 })
 
 export const metadata: Metadata = {
   title: 'Lacrei Saúde',
   description: 'Plataforma de cuidado em saúde inclusiva',
+  icons: {
+    icon: [{ url: '/favicon.svg', type: 'image/svg+xml' }],
+  },
 }
 
 export default function RootLayout({
