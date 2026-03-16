@@ -1,6 +1,3 @@
-import { Container } from '@/shared/components/Container'
-import { Footer } from '@/shared/components/Footer'
-import { Header } from '@/shared/components/Header'
 import { Hero } from '@/shared/components/Hero'
 
 export default function Home() {
