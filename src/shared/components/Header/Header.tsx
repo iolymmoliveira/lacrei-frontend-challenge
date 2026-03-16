@@ -9,13 +9,15 @@ import { People, Help } from '@/shared/components/Icons'
 const NAV_LINKS = [
   {
     href: '/quem-somos',
-    label: 'Navegar para a página Quem Somos',
+    label: 'Quem somos',
+    ariaLabel: 'Navegar para a página Quem Somos',
     testId: 'nav-link-quem-somos',
     icon: <People />,
   },
   {
     href: '/ajuda',
-    label: 'Navegar para a página Ajuda',
+    label: 'Ajuda',
+    ariaLabel: 'Navegar para a página Ajuda',
     testId: 'nav-link-ajuda',
     icon: <Help />,
   },
@@ -29,14 +31,14 @@ export function Header() {
           <Logo />
           <NavGroup>
             <NavLinks>
-              {NAV_LINKS.map(({ href, label, testId, icon }) => (
+              {NAV_LINKS.map(({ href, label, ariaLabel, testId, icon }) => (
                 <Button
                   key={href}
                   variant="primary"
                   size="md"
                   icon={icon}
                   testId={testId}
-                  aria-label={label}
+                  aria-label={ariaLabel}
                   onClick={() => window.location.assign(href)}
                 >
                   {label}
