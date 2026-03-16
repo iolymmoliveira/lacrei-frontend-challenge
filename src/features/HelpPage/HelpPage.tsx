@@ -1,6 +1,6 @@
 'use client'
 
-import { Container } from '../Container'
+import { Container } from '../../shared/components/Container'
 import type { FAQItem } from '@/types/faq'
 import {
   Section,

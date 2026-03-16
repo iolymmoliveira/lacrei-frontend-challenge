@@ -1,4 +1,4 @@
-import { HelpPage } from '@/shared/components/HelpPage'
+import { HelpPage } from '@/features/HelpPage'
 import { getFaqItems } from '@/services/faqService'
 
 export const metadata = {
