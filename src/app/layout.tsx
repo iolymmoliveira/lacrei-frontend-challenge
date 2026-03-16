@@ -5,8 +5,9 @@ import { Nunito } from 'next/font/google'
 
 const nunito = Nunito({
   subsets: ['latin'],
-  weight: ['400', '700', '800'],
+  weight: ['400', '700'],
   variable: '--font-nunito',
+  display: 'swap',
 })
 
 export const metadata: Metadata = {

@@ -1,4 +1,4 @@
-const Favicon = () => {
+export const Favicon = () => {
   return (
     <svg
       width="268"

@@ -18,10 +18,12 @@ export const GlobalStyle = createGlobalStyle`
     min-height: 100vh;
     max-width: 1100px;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
   }
 
   main {
-    margin-bottom: 24px;
+    /* margin-bottom: 24px; */
     flex: 1;
   }
 
