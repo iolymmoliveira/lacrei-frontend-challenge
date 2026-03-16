@@ -1,0 +1,27 @@
+[
+  {
+    "id": "o-que-e",
+    "question": "O que é a Lacrei Saúde?",
+    "answer": "A Lacrei Saúde é uma plataforma de saúde inclusiva que conecta pessoas LGBTQIA+ a profissionais de saúde capacitados para oferecer um atendimento seguro, respeitoso e livre de discriminação."
+  },
+  {
+    "id": "como-funciona",
+    "question": "Como funciona a plataforma?",
+    "answer": "Você pode buscar profissionais de saúde cadastrados, visualizar seus perfis e agendar consultas diretamente pela plataforma, de forma simples e segura."
+  },
+  {
+    "id": "profissionais",
+    "question": "Como os profissionais são selecionados?",
+    "answer": "Todos os profissionais cadastrados passam por um processo de verificação e são capacitados para oferecer atendimento inclusivo e humanizado à comunidade LGBTQIA+."
+  },
+  {
+    "id": "dados",
+    "question": "Meus dados estão seguros?",
+    "answer": "Sim. A Lacrei Saúde segue rigorosamente a Lei Geral de Proteção de Dados (LGPD). Suas informações são armazenadas com segurança e nunca compartilhadas sem o seu consentimento."
+  },
+  {
+    "id": "gratuito",
+    "question": "A plataforma é gratuita?",
+    "answer": "O acesso à plataforma e a busca por profissionais são gratuitos. Os valores das consultas são definidos por cada profissional e informados antes do agendamento."
+  }
+]
