@@ -9,6 +9,7 @@ interface LogoProps {
   href?: string
   size?: number
   showIconOnMobile?: boolean
+  priority?: boolean
 }
 
 export function Logo({
@@ -18,11 +19,18 @@ export function Logo({
   href = '/',
   size = 35,
   showIconOnMobile = false,
+  priority = true,
 }: LogoProps) {
   const content = (
     <LogoWrapper>
       <LogoImage $showIconOnMobile={showIconOnMobile}>
-        <Image src={src} alt={alt} width={size} height={size} />
+        <Image
+          src={src}
+          alt={alt}
+          width={size}
+          height={size}
+          priority={priority}
+        />
       </LogoImage>
 
       <Stamp>{text}</Stamp>
