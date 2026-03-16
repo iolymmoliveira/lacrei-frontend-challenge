@@ -9,13 +9,13 @@ import { People, Help } from '@/shared/components/Icons'
 const NAV_LINKS = [
   {
     href: '/quem-somos',
-    label: 'Quem somos',
+    label: 'Navegar para a página Quem Somos',
     testId: 'nav-link-quem-somos',
     icon: <People />,
   },
   {
     href: '/ajuda',
-    label: 'Ajuda',
+    label: 'Navegar para a página Ajuda',
     testId: 'nav-link-ajuda',
     icon: <Help />,
   },

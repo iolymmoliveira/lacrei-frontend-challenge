@@ -1,3 +1,5 @@
 export { Favicon } from './Favicon'
 export { Help } from './Help'
+export { GitHub } from './GitHub'
+export { LinkedIn } from './LinkedIn'
 export { People } from './People'
