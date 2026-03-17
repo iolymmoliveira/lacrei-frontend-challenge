@@ -21,7 +21,7 @@ export const Block = styled.div`
   border-left: 4px solid ${({ theme }) => theme.color.border.accent};
   border-radius: 0 ${({ theme }) => theme.borderRadius.sm}
     ${({ theme }) => theme.borderRadius.sm} 0;
-  background-color: ${({ theme }) => theme.color.background.success};
+  background-color: ${({ theme }) => theme.color.background.default};
 
   ${media.tablet`
     padding: ${({ theme }) => theme.space.inset.md};
@@ -30,7 +30,7 @@ export const Block = styled.div`
 
 export const BlockTitle = styled.h2`
   ${typography('headline-sm-high200')};
-  color: ${({ theme }) => theme.color.text.accent};
+  color: ${({ theme }) => theme.color.text.heading};
 `
 
 export const BlockText = styled.p`
@@ -40,7 +40,7 @@ export const BlockText = styled.p`
 `
 
 export const ExternalLink = styled.a`
-  color: ${({ theme }) => theme.color.text.accent};
+  color: ${({ theme }) => theme.color.text.pressed};
   text-decoration: underline;
   transition: color 200ms;
 

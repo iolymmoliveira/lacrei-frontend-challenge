@@ -55,7 +55,7 @@ export const ContactBlock = styled.div`
   gap: ${({ theme }) => theme.space.stack.xs};
   padding: ${({ theme }) => theme.space.inset.md};
   border-radius: ${({ theme }) => theme.borderRadius.md};
-  background-color: ${({ theme }) => theme.color.background.success};
+  background-color: ${({ theme }) => theme.color.background.default};
   text-align: center;
 `
 
@@ -66,7 +66,7 @@ export const ContactText = styled.p`
 
 export const ContactLink = styled.a`
   ${typography('text-base-high200')};
-  color: ${({ theme }) => theme.color.text.accent};
+  color: ${({ theme }) => theme.color.text.pressed};
   text-decoration: underline;
   transition: color 200ms;
 
