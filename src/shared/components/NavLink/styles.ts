@@ -2,7 +2,9 @@ import styled from 'styled-components'
 import Link from 'next/link'
 import { typography } from '@/shared/utils/typography'
 
-export const StyledNavLink = styled(Link)`
+export const StyledNavLink = styled(Link).withConfig({
+  shouldForwardProp: (prop) => prop !== 'testId',
+})`
   ${typography('text-sm-high200')};
   text-decoration: none;
   color: ${({ theme }) => theme.color.text.body};
