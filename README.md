@@ -21,6 +21,7 @@ Desafio técnico de Frontend desenvolvido como parte do processo seletivo para v
 - [Escolhas Visuais e Técnicas](#-escolhas-visuais-e-técnicas)
 - [Mock de API](#-mock-de-api)
 - [Rollback](#-rollback)
+- [CI/CD](#️-cicd)
 - [Desenvolvedora](#-desenvolvedora)
 
 <br/>
@@ -328,6 +329,35 @@ npm test Header
 
 ---
 
+## 🎨 Escolhas Visuais e Técnicas
+
+### Design System
+
+O projeto segue fielmente o **Marsha Design System** da Lacrei Saúde, com todos os tokens centralizados em `theme.ts`:
+
+- **Cores:** paleta verde como cor de identidade (`accent: rgba(1, 135, 98, 1)`)
+- **Tipografia:** fonte Nunito com escala de `text-xs` a `headline-xl`
+- **Espaçamento:** escala semântica com aliases `stack`, `inline` e `inset`
+- **Breakpoints:** mobile-first com `tablet: 720px` e `desktop: 1024px`
+
+### Decisões técnicas
+
+| Decisão                                   | Justificativa                                                 |
+| ----------------------------------------- | ------------------------------------------------------------- |
+| **App Router** do Next.js                 | Server Components nativos, melhor performance e SEO           |
+| **Styled-Components** com `ThemeProvider` | Design tokens tipados e acessíveis em todo o projeto          |
+| `typography()` helper                     | Evita repetição e garante consistência tipográfica            |
+| `media` helper                            | Breakpoints centralizados e type-safe via `theme.breakpoints` |
+| `shouldForwardProp`                       | Evita warnings de props HTML inválidas no DOM                 |
+| **Server Components** para dados          | FAQ buscado no servidor — sem flash de conteúdo               |
+| `NAV_LINKS` como constante                | Declarativo, fácil de estender sem alterar JSX                |
+| `data-testid` via prop `testId`           | Seletores estáveis e semânticos para testes                   |
+| Ícones como componentes SVG               | Sem dependência externa, tree-shakeable e acessíveis          |
+
+<br/>
+
+---
+
 ## 🔌 Mock de API
 
 O FAQ da página **Ajuda** simula uma integração com API real:
@@ -384,30 +414,34 @@ git push origin hotfix/rollback
 
 ---
 
-## 🎨 Escolhas Visuais e Técnicas
+## ⚙️ CI/CD
 
-### Design System
+O projeto utiliza **GitHub Actions** para automação de qualidade:
 
-O projeto segue fielmente o **Marsha Design System** da Lacrei Saúde, com todos os tokens centralizados em `theme.ts`:
+### Integração Contínua — `ci.yml`
 
-- **Cores:** paleta verde como cor de identidade (`accent: rgba(1, 135, 98, 1)`)
-- **Tipografia:** fonte Nunito com escala de `text-xs` a `headline-xl`
-- **Espaçamento:** escala semântica com aliases `stack`, `inline` e `inset`
-- **Breakpoints:** mobile-first com `tablet: 720px` e `desktop: 1024px`
+Roda automaticamente a cada `push` na branch `main`:
 
-### Decisões técnicas
+- Instala as dependências com `npm ci`
+- Executa todos os testes com `npm test`
+- Bloqueia merge se algum teste falhar
 
-| Decisão                                   | Justificativa                                                 |
-| ----------------------------------------- | ------------------------------------------------------------- |
-| **App Router** do Next.js                 | Server Components nativos, melhor performance e SEO           |
-| **Styled-Components** com `ThemeProvider` | Design tokens tipados e acessíveis em todo o projeto          |
-| `typography()` helper                     | Evita repetição e garante consistência tipográfica            |
-| `media` helper                            | Breakpoints centralizados e type-safe via `theme.breakpoints` |
-| `shouldForwardProp`                       | Evita warnings de props HTML inválidas no DOM                 |
-| **Server Components** para dados          | FAQ buscado no servidor — sem flash de conteúdo               |
-| `NAV_LINKS` como constante                | Declarativo, fácil de estender sem alterar JSX                |
-| `data-testid` via prop `testId`           | Seletores estáveis e semânticos para testes                   |
-| Ícones como componentes SVG               | Sem dependência externa, tree-shakeable e acessíveis          |
+### Lighthouse CI — `lighthouse.yml`
+
+Roda automaticamente a cada `pull request` para a `main`:
+
+- Faz o build da aplicação
+- Audita as três rotas principais (`/`, `/quem-somos`, `/ajuda`)
+- Reprova o PR se as notas caírem abaixo das metas definidas em `lighthouserc.json`
+
+### Metas de qualidade configuradas
+
+| Categoria      | Mínimo |
+| -------------- | ------ |
+| Performance    | 80     |
+| Accessibility  | 90     |
+| Best Practices | 90     |
+| SEO            | 90     |
 
 <br/>
 
