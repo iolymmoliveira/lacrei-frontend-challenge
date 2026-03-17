@@ -5,6 +5,7 @@ import { Nunito } from 'next/font/google'
 import { Header } from '@/shared/components/Header'
 import { Footer } from '@/shared/components/Footer'
 import { Container } from '@/shared/components/Container'
+import { ScrollToTop } from '@/shared/components/ScrollToTop'
 
 const nunito = Nunito({
   subsets: ['latin'],
@@ -33,6 +34,7 @@ export default function RootLayout({
           <Providers>
             <Header />
             <Container as={'main'}>{children}</Container>
+            <ScrollToTop />
             <Footer />
           </Providers>
         </StyledComponentsRegistry>

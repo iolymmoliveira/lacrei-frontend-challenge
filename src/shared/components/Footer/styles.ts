@@ -28,4 +28,5 @@ export const TextContainer = styled.div`
 
 export const Paragraph = styled.p`
   ${typography('text-base-high200')}
+  text-align: end;
 `

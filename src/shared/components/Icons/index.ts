@@ -1,3 +1,4 @@
+export { ArrowUp } from './ArrowUp'
 export { Favicon } from './Favicon'
 export { Help } from './Help'
 export { GitHub } from './GitHub'
