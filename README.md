@@ -233,7 +233,7 @@ O deploy é feito automaticamente via integração com o GitHub na [Vercel](http
 2. A Vercel detecta automaticamente o projeto Next.js
 3. O build é executado e o deploy é publicado
 
-**URL de produção:** _em breve_
+**URL de produção:** [lacrei-frontend-challenge.vercel.app](https://lacrei-frontend-challenge.vercel.app)
 
 <br/>
 
