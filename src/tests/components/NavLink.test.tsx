@@ -8,7 +8,6 @@ jest.mock('next/link', () => ({
   default: ({
     href,
     children,
-    ...rest
   }: {
     href: string
     children: React.ReactNode

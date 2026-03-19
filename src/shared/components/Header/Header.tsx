@@ -1,9 +1,8 @@
 'use client'
 
 import { Container } from '@/shared/components/Container'
-import { Button } from '@/shared/components/Button'
 import { Logo } from '@/shared/components/Logo'
-import { StyledHeader, Nav, NavGroup, NavLinks } from './styles'
+import { StyledHeader, Nav, NavGroup, NavLinks, NavButton } from './styles'
 import { People, Help } from '@/shared/components/Icons'
 
 const NAV_LINKS = [
@@ -32,17 +31,17 @@ export function Header() {
           <NavGroup>
             <NavLinks>
               {NAV_LINKS.map(({ href, label, ariaLabel, testId, icon }) => (
-                <Button
+                <NavButton
                   key={href}
-                  variant="primary"
-                  size="md"
-                  icon={icon}
-                  testId={testId}
+                  href={href}
                   aria-label={ariaLabel}
-                  onClick={() => window.location.assign(href)}
+                  data-testid={testId}
                 >
-                  {label}
-                </Button>
+                  <span className="btn-icon" aria-hidden="true">
+                    {icon}
+                  </span>
+                  <span className="btn-label">{label}</span>
+                </NavButton>
               ))}
             </NavLinks>
           </NavGroup>

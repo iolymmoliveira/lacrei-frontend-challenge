@@ -23,7 +23,6 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   main {
-    /* margin-bottom: 24px; */
     flex: 1;
   }
 

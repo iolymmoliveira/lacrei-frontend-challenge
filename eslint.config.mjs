@@ -12,7 +12,20 @@ const eslintConfig = defineConfig([
     rules: {
       'react/self-closing-comp': 'error',
       'react/jsx-boolean-value': ['error', 'never'],
-      'no-unused-vars': 'warn',
+      'no-unused-vars': [
+        'warn',
+        {
+          argsIgnorePattern: '^_',
+          varsIgnorePattern: '^_',
+        },
+      ],
+      '@typescript-eslint/no-unused-vars': [
+        'warn',
+        {
+          argsIgnorePattern: '^_',
+          varsIgnorePattern: '^_',
+        },
+      ],
       'no-console': 'warn',
       'prefer-const': 'error',
     },
@@ -24,6 +37,7 @@ const eslintConfig = defineConfig([
     '.next/**',
     'out/**',
     'build/**',
+    'coverage/**',
     'next-env.d.ts',
   ]),
 ])
