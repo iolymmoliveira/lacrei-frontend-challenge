@@ -22,33 +22,33 @@ const renderWithTheme = (ui: React.ReactElement) =>
   render(<ThemeProvider theme={theme}>{ui}</ThemeProvider>)
 
 describe('Header', () => {
-  it('Render element header with navigation role', () => {
+  it('renders the navigation landmark', () => {
     renderWithTheme(<Header />)
     expect(
       screen.getByRole('navigation', { name: 'Navegação principal' }),
     ).toBeInTheDocument()
   })
 
-  it('Render navigation buttons', () => {
+  it('renders all navigation links', () => {
     renderWithTheme(<Header />)
-    expect(screen.getByTestId('nav-link-quem-somos')).toBeInTheDocument()
-    expect(screen.getByTestId('nav-link-ajuda')).toBeInTheDocument()
+    expect(screen.getByText('Quem somos')).toBeInTheDocument()
+    expect(screen.getByText('Ajuda')).toBeInTheDocument()
   })
 
-  it('Navigation buttons have descriptive aria-labels', () => {
+  it('navigation links have correct hrefs', () => {
     renderWithTheme(<Header />)
-    expect(
-      screen.getByLabelText('Navegar para a página Quem Somos'),
-    ).toBeInTheDocument()
-    expect(
-      screen.getByLabelText('Navegar para a página Ajuda'),
-    ).toBeInTheDocument()
+    expect(screen.getByText('Quem somos').closest('a')).toHaveAttribute(
+      'href',
+      '/quem-somos',
+    )
+    expect(screen.getByText('Ajuda').closest('a')).toHaveAttribute(
+      'href',
+      '/ajuda',
+    )
   })
 
-  it('Navigation button points to the /quem-somos route', () => {
+  it('renders the logo', () => {
     renderWithTheme(<Header />)
-    const button = screen.getByTestId('nav-link-quem-somos')
-    expect(button).toBeInTheDocument()
-    expect(button).not.toBeDisabled()
+    expect(screen.getByAltText('Lacrei Saúde Logo')).toBeInTheDocument()
   })
 })

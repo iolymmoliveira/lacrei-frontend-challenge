@@ -20,11 +20,13 @@ export function Button({
   icon,
   children,
   testId,
+  type = 'button',
   'aria-label': ariaLabel,
   ...rest
 }: ButtonProps) {
   return (
     <StyledButton
+      type={type}
       variant={variant}
       size={size}
       data-testid={testId}

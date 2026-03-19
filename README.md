@@ -46,13 +46,13 @@ Este projeto é uma aplicação web desenvolvida com **Next.js**, **TypeScript**
 
 ## 🛠 Tecnologias
 
-| Tecnologia                                            | Versão | Uso                            |
-| ----------------------------------------------------- | ------ | ------------------------------ |
-| [Next.js](https://nextjs.org/)                        | 15+    | Framework React com App Router |
-| [TypeScript](https://www.typescriptlang.org/)         | 5+     | Tipagem estática               |
-| [Styled-Components](https://styled-components.com/)   | 6+     | Estilização com tema           |
-| [Jest](https://jestjs.io/)                            | 29+    | Testes unitários               |
-| [React Testing Library](https://testing-library.com/) | 14+    | Testes de componentes          |
+| Tecnologia                                            | Versão  | Uso                            |
+| ----------------------------------------------------- | ------- | ------------------------------ |
+| [Next.js](https://nextjs.org/)                        | 16.1.6  | Framework React com App Router |
+| [TypeScript](https://www.typescriptlang.org/)         | 5+      | Tipagem estática               |
+| [Styled-Components](https://styled-components.com/)   | 6+      | Estilização com tema           |
+| [Jest](https://jestjs.io/)                            | ^30.3.0 | Testes unitários               |
+| [React Testing Library](https://testing-library.com/) | ^16.3.2 | Testes de componentes          |
 
 <br/>
 
@@ -95,7 +95,7 @@ O projeto adota uma arquitetura **feature-based** combinada com uma camada `shar
 
 - **SRP (Single Responsibility Principle):** cada componente tem uma única responsabilidade — `Button` lida apenas com o estilo e comportamento do botão; `Header` apenas com a composição da navegação
 - **OCP (Open/Closed Principle):** `Button` é extensível via props `variant` e `size` sem alterar sua implementação
-- **DIP (Dependency Inversion Principle):** `Header` depende da abstração `Button` e `NavLink`, não de `<button>` e `<a>` diretamente
+- **DIP (Dependency Inversion Principle):** `Header` depende da abstração `NavButton` (Link estilizado) para navegação
 - **Clean Code:** constantes declarativas (`NAV_LINKS`, `SOCIAL_LINKS`, `FAQ_ITEMS`), props semânticas (`testId`, `ariaLabel`, `priority`) e nenhuma lógica inline nos templates
 
 ---
@@ -186,7 +186,7 @@ src/
 
 ### Pré-requisitos
 
-- Node.js 18+
+- Node.js 20+
 - npm ou yarn
 
 ### Instalação
@@ -262,9 +262,12 @@ npm test Header
 
 | Componente    | Tipo       | O que é testado                                                   |
 | ------------- | ---------- | ----------------------------------------------------------------- |
-| `Header`      | Navegação  | Renderização, aria-labels, botões e navegação entre rotas         |
-| `Footer`      | Layout     | Links sociais, aria-labels, target `_blank` e copyright           |
+| `Header`      | Navegação  | Landmark de navegação, links, hrefs corretos e logo               |
+| `Footer`      | Layout     | Links sociais, aria-labels, target \_blank e copyright            |
 | `ScrollToTop` | Interativo | Visibilidade por scroll, clique com scroll suave e acessibilidade |
+| `Button`      | Interativo | Renderização, aria-label, ícone, onClick, disabled e testId       |
+| `IconLink`    | Navegação  | href, aria-label, target \_blank, rel, ícone e testId             |
+| `NavLink`     | Navegação  | Renderização, texto, href, role acessível e children              |
 
 ### Estratégia de testes
 
@@ -416,15 +419,18 @@ git push origin hotfix/rollback
 
 ## ⚙️ CI/CD
 
-O projeto utiliza **GitHub Actions** para automação de qualidade:
+O projeto utiliza **GitHub Actions** para automação de qualidade.
 
 ### Integração Contínua — `ci.yml`
 
-Roda automaticamente a cada `push` na branch `main`:
+Roda automaticamente a cada `push` na branch `main` e em `pull request` para `main`:
 
 - Instala as dependências com `npm ci`
+- Executa o lint com `npm run lint`
+- Gera o build de produção com `npm run build`
 - Executa todos os testes com `npm test`
-- Bloqueia merge se algum teste falhar
+
+Isso garante que a aplicação builda corretamente e atende às regras de estilo antes de qualquer merge.
 
 ### Lighthouse CI — `lighthouse.yml`
 
